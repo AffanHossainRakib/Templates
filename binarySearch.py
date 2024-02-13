@@ -1,4 +1,4 @@
-def binarySearch(arr, key) -> int: # iterative
+def BinarySearch(arr, key) -> int: # iterative
     lo = 0
     hi = len(arr) - 1
 
@@ -12,7 +12,7 @@ def binarySearch(arr, key) -> int: # iterative
             lo = mid + 1
     return -1
 
-def recBinarySearch(arr, key, lo, hi) -> int: # recursive
+def RecBinarySearch(arr, key, lo, hi) -> int: # recursive
     if lo > hi:
         return -1
     
@@ -20,10 +20,10 @@ def recBinarySearch(arr, key, lo, hi) -> int: # recursive
     if arr[mid] == key:
         return key
     if key < arr[mid]:
-        return recBinarySearch(arr, key, lo, mid-1)
+        return RecBinarySearch(arr, key, lo, mid-1)
     elif arr[mid] < key:
-        return recBinarySearch(arr, key, mid+1, hi)
+        return RecBinarySearch(arr, key, mid+1, hi)
 
 
 # arr = [1, 2, 4, 5, 7, 8, 20, 20, 221, 222, 230]
-# print(recBinarySearch(arr, 230, 0, len(arr)-1))
+# print(RecBinarySearch(arr, 230, 0, len(arr)-1))
